@@ -37,7 +37,10 @@
                     }
                 }
             } else if (xml.nodeType == 3) { // text
-                obj = xml.nodeValue;
+                //clean empty text
+                if (xml.nodeValue.trim()!=""){
+                    obj = xml.nodeValue;
+                }
             }
 
             // do children
@@ -56,6 +59,21 @@
                         obj[nodeName].push($scope.xmlToJson(item));
                     }
                 }
+            }
+
+            //clean empty texts
+            if (angular.isArray(obj['#text'])) {
+                var blank = true;
+                var str = "";
+                angular.forEach(obj["#text"], function(t){
+                    if (!angular.equals({}, t) && t.trim()!="") {
+                        blank = false;
+                        str+=t+"\n";
+                    }
+                })
+                if (blank) {
+                    delete obj["#text"];
+                } else obj["#text"] = str;
             }
             return obj;
         };
