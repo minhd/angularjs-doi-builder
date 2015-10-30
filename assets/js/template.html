@@ -1,0 +1,27 @@
+<!-- <ng-xml-element ng-repeat="obj in objectModel" ng-model="obj"></ng-xml-element> -->
+
+<div ng-repeat="(key,value) in objectModel" class="box">
+    <!-- <ng-xml-element ng-model="value.titles"></ng-xml-element> -->
+
+    <h5>Titles: </h5>
+    <div ng-repeat="title in value.titles.title track by $index" class="box">
+        <b>Title</b>
+        <input type="text" ng-model="title['#text']"/>
+        <b>Type</b>
+        <input type="text" ng-model="title['@attributes']['titleType']"/>
+        <a href="" ng-click="remove(value.titles.title, $index)">Remove</a>
+    </div>
+    <a href="" ng-click="add(value.titles, 'title')">Add Titles</a>
+
+    <hr/>
+    {{ objectModel }}
+    <hr/>
+
+
+    <!-- <ng-xml-element ng-repeat="obj in value" ng-model="obj"></ng-xml-element> -->
+</div>
+
+<!-- <div>
+    <ng-xml-element ng-model="objectModel.resource.titles"></ng-xml-element>
+    <ng-xml-element ng-model="objectModel.resource.contributors"></ng-xml-element>
+</div> -->

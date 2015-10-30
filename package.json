@@ -1,0 +1,19 @@
+{
+  "name": "angularjs-doi-builder",
+  "version": "1.0.0",
+  "description": "An angularJS form builder to build DOI Datacite XML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhd/angularjs-doi-builder.git"
+  },
+  "author": "Minh Duc Nguyen <minh.nguyen@ands.org.au>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minhd/angularjs-doi-builder/issues"
+  },
+  "homepage": "https://github.com/minhd/angularjs-doi-builder#readme"
+}
